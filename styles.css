@@ -1,0 +1,145 @@
+* { /*  usa o * para selecionar tudo, é um seletor universal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* usado para considerar os 580px mesmo que a caixa tenha um preenchimento */
+}
+
+ul{
+    list-style: none;  /* não vai ter pontinhos na lista */
+}
+
+body {
+    background-image: url(./assets/Fundo.jpg);
+    background-position: top center; /* para ficar sempre no topo e no centro da pagina*/
+    background-size: 100% auto; /* largura sempre em 100% para aproveitar toda a janela*/
+    background-repeat: no-repeat; /* para não repetir o backgound/imagem*/
+    background-color: #121214;   /* cor do fundo os dois primeiros numeros significa o vermelho as duas do meio verde e as duas ultimas azul, então 12 de red 12 de green 14 de blue */
+    
+}
+body * {
+    font-family: 'Inter', sans-serif;  /* esolhe a fonte para a pagina, fonte que esta la no html em "link" */
+    line-height: 160%; 
+}
+
+
+    /* border: 1px solid red; /* usado para ver as bordas  , mas precisa colocar dentro de uma "main" com chaves tbm*/  
+
+
+header {
+    margin-top: 32px;  /* tbm pode ser usado o padding-top no lugar do margin já que ambos trabalham com espaços */
+    text-align: center;  /* o text-align é usando para alinhar propiedades de texto, a IMG ali do header é identificada como texto tbm, se acontecer de não alinhar é pq ela não é reconhecida como propriedade de texto */ 
+        /* aas Div's não tem propiedade de texto*/
+        /* o text-align não é mais necessario aqui pq a Div ta usando o Margin-auto ali em baixo */
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%) ;
+
+    border-radius: 50%;
+    
+    display: flex; /* aqui ele como tem só esse elemento ele não vai deixar um ao lado do outro mas sim alinhar/organizar */
+    padding: 4px; /* usado para preencher a caixa, assim deixando aquela borda bonitinha *-*  */
+
+    transition: transform .3s; /* o transition vai entender que, quando o Mouse passar por ali a propriedade Transform sera ativada e logo depois é só vc colocar quanto tempo ela vai ser atica, no sado ali 0,3seg */
+}  
+
+header div:hover { /* quando usar os :hover na Div significa que quando passar o mouse por cima ele vai mostrar oq tem aqui dentro, os atributos que estão aqui */
+    transform: scale(1.1); /* ele vai trazer o efeito de 'pulsar' em 1.1seg  */
+
+}
+
+header div img {  /* a imagem ta dentro da Div, por isso deixei claro aqui colocando Div img */
+    width: 100%;
+    border-radius: 50%;
+    
+}
+
+main {
+    max-width: 580px; /* todas as coisas dentro do main no html iram manter essa largura maxima*/
+    width: 90%; /* quando a tela for menor que 580px ela vai ficar em 90% da tela, limitando a isso*/
+    margin: 32px auto; /* as margens ao redor da caixa/tela vai ser auto*/
+         /* usando 2 atributos aqui no margin ele vai trabalhar da seguinte maneira... o 32px fica a distancia de cima e de baixo e o Auto fica a distancia das laterais 
+         */
+    display: grid;  /* usando o grid tbm desbloqueia o Gap mas mantem eles um a baixo do outro e não leva para a mesma linha */
+    gap: 24px; 
+
+    margin-top: 32px;
+}
+
+section {
+    color: white; /* cor da fonte */
+
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%) ; /* usar o linear gradiente para colocar mais de uma cor na mesma linha e escolher em qual % ela vai aparecer */
+    padding-top: 4px; /* para aparecer só no top */
+    border-radius: 10px; /* borda lateral */
+
+}
+
+section div {
+    background-color: #2A2634;  /* cor da caixa onde os itens ficam por cima */
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+ 
+}
+
+section h2 {
+    font-weight: 900; /* tamanho da fonte, as vezes o navegador já traz isso */
+    font-size: 24px;  /* */
+    letter-spacing: -0.47px; /* espaço estre as letras*/
+}
+section p {
+    font-size: 16px;
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+section ul {
+    display: flex;  /* dysplay é usado para visualização das caixas, para ficar ao lado uma da outra ou em baixo */
+            /* o flex é usado para mudar todas as caixas que estão dentro de outras, no caso são as Li do html */
+    flex-wrap: wrap; /* com isso ele vai se ajustar se tiver mais jogos la na lista, jogando eles para baixo quando chegar no limite da tela e não deixando todos eles ao lado um do outro*/
+    
+    gap: 16px;  /* fuçao Gap só funciona pq foi colocado o display flex */
+
+    margin-top: 24px;
+}
+
+section ul li {
+    transition: transform .3s;
+}
+section ul li:hover {   /* lem,brar sempre de usar o Hover para dizer que é quando passar o mouse por cima */
+    transform: scale(1.1);
+}
+
+.Games-List img {
+    width: 90px;
+    border-radius: 8px;
+}
+
+.channel-list img {
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54;  /* essa borda aqui mal da p ver, mas ela vai esta la */ 
+}
+
+/* .social-list /* não precisa colocar pq o svg ja deu todo o acabamento, todas as propriedades */
+  
+
+    /* Animations */
+
+    @keyframes fromTop {
+        0% {    /* pode colocar 0% que é o inicio dele ou usar From tbm, da a mesma coisa */
+            transform: translateY(-30px);  /* o eixo Y é a vertial, o meio*/
+        }
+
+
+        100%{
+            transform: translateY(0);
+
+        }
+
+
+        
+    }
