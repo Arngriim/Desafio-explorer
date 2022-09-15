@@ -9,7 +9,7 @@ ul{
 }
 
 body {
-    background-image: url(./assets/Fundo.jpg);
+    background-image: url(./assets/imgfundo1.jpg);
     background-position: top center; /* para ficar sempre no topo e no centro da pagina*/
     background-size: 100% auto; /* largura sempre em 100% para aproveitar toda a janela*/
     background-repeat: no-repeat; /* para não repetir o backgound/imagem*/
@@ -26,8 +26,11 @@ body * {
 
 
 header {
-    margin-top: 32px;  /* tbm pode ser usado o padding-top no lugar do margin já que ambos trabalham com espaços */
-    text-align: center;  /* o text-align é usando para alinhar propiedades de texto, a IMG ali do header é identificada como texto tbm, se acontecer de não alinhar é pq ela não é reconhecida como propriedade de texto */ 
+    padding-top:  32px;  /* tbm pode ser usado o padding-top no lugar do margin já que ambos trabalham com espaços */
+    height: calc(120px + 32px);
+    
+    
+   /* text-align: center;  /* o text-align é usando para alinhar propiedades de texto, a IMG ali do header é identificada como texto tbm, se acontecer de não alinhar é pq ela não é reconhecida como propriedade de texto */ 
         /* aas Div's não tem propiedade de texto*/
         /* o text-align não é mais necessario aqui pq a Div ta usando o Margin-auto ali em baixo */
 }
@@ -71,7 +74,7 @@ main {
 section {
     color: white; /* cor da fonte */
 
-    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%) ; /* usar o linear gradiente para colocar mais de uma cor na mesma linha e escolher em qual % ela vai aparecer */
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #9572FC 100%) ; /* usar o linear gradiente para colocar mais de uma cor na mesma linha e escolher em qual % ela vai aparecer */
     padding-top: 4px; /* para aparecer só no top */
     border-radius: 10px; /* borda lateral */
 
@@ -109,7 +112,7 @@ section ul {
 section ul li {
     transition: transform .3s;
 }
-section ul li:hover {   /* lem,brar sempre de usar o Hover para dizer que é quando passar o mouse por cima */
+section ul li:hover {   /* lembrar sempre de usar o Hover para dizer que é quando passar o mouse por cima */
     transform: scale(1.1);
 }
 
@@ -127,19 +130,47 @@ section ul li:hover {   /* lem,brar sempre de usar o Hover para dizer que é qua
 /* .social-list /* não precisa colocar pq o svg ja deu todo o acabamento, todas as propriedades */
   
 
-    /* Animations */
+           /* Animations */
+header div {
+    animation: fromTop 0.7s .2s backwards;
 
-    @keyframes fromTop {
-        0% {    /* pode colocar 0% que é o inicio dele ou usar From tbm, da a mesma coisa */
-            transform: translateY(-30px);  /* o eixo Y é a vertial, o meio*/
-        }
+} 
 
-
-        100%{
-            transform: translateY(0);
-
-        }
-
-
-        
+@keyframes fromTop {
+    0% {    /* pode colocar 0% que é o inicio dele ou usar From tbm, da a mesma coisa */
+        opacity: 0;    
+        transform: translateY(-30px);  /* o eixo Y é a vertial, o meio*/
     }
+
+
+    100%{
+        opacity: 1;    
+        transform: translateY(0);
+
+    }
+    
+    }
+main section {
+    animation: fromBottom .7s backwards; 
+}
+
+main section:nth-child(1) { /* resumindo 'main, pega section do child/filho de numero 1', é usado assim pq tem 3 sections la no html */
+    animation-delay: 0;
+}
+main section:nth-child(2) {
+    animation-delay: .5s;
+}
+main section:nth-child(3) {
+    animation-delay: 1s;
+}
+@keyframes fromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+    
+}
