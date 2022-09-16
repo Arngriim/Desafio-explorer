@@ -11,9 +11,9 @@ ul{
 body {
     background-image: url(./assets/imgfundo1.jpg);
     background-position: top center; /* para ficar sempre no topo e no centro da pagina*/
-    background-size: 100% auto; /* largura sempre em 100% para aproveitar toda a janela*/
+    background-size: 100% 100%; /* largura sempre em 100% para aproveitar toda a janela*/
     background-repeat: no-repeat; /* para não repetir o backgound/imagem*/
-    background-color: #121214;   /* cor do fundo os dois primeiros numeros significa o vermelho as duas do meio verde e as duas ultimas azul, então 12 de red 12 de green 14 de blue */
+    /*background-color: #121214; */  /* cor do fundo os dois primeiros numeros significa o vermelho as duas do meio verde e as duas ultimas azul, então 12 de red 12 de green 14 de blue */
     
 }
 body * {
